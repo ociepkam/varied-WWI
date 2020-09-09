@@ -39,7 +39,7 @@ def prepare_trial(trial_type, win, text_height, words_dist):
         color = random.choice(possible_colors)
         words = [text, text, text]
 
-    elif trial_type == 'trial_inc1_inc1_inc2':
+    elif trial_type == 'trial_inc1_inc2_inc1':
         possible_colors = [stim_text[key] for key in stim_text]
         if last_color in possible_colors:
             possible_colors.remove(last_color)
@@ -75,11 +75,11 @@ def prepare_trial(trial_type, win, text_height, words_dist):
     return {'trial_type': trial_type, 'text': words, 'color': color, 'stim': [stim1, stim2, stim3]}
 
 
-def prepare_part(trials_con_con_con, trials_inc1_inc1_inc1, trials_inc1_inc1_inc2, trials_inc1_inc2_inc3,
+def prepare_part(trials_con_con_con, trials_inc1_inc1_inc1, trials_inc1_inc2_inc1, trials_inc1_inc2_inc3,
                  trials_neu_neu_neu, win, text_height, words_dist):
     trials = ['trial_con_con_con'] * trials_con_con_con + \
              ['trial_inc1_inc1_inc1'] * trials_inc1_inc1_inc1 + \
-             ['trial_inc1_inc1_inc2'] * trials_inc1_inc1_inc2 + \
+             ['trial_inc1_inc2_inc1'] * trials_inc1_inc2_inc1 + \
              ['trial_inc1_inc2_inc3'] * trials_inc1_inc2_inc3 + \
              ['trial_neu_neu_neu'] * trials_neu_neu_neu
     random.shuffle(trials)
@@ -90,21 +90,21 @@ def prepare_exp(data, win, text_size, words_dist):
     text_height = 1.5 * text_size
     training1_trials = prepare_part(data['Training1_trials_con_con_con'],
                                     data['Training1_trials_inc1_inc1_inc1'],
-                                    data['Training1_trials_inc1_inc1_inc2'],
+                                    data['Training1_trials_inc1_inc2_inc1'],
                                     data['Training1_trials_inc1_inc2_inc3'],
                                     data['Training1_trials_neu_neu_neu'],
                                     win, text_height, words_dist)
 
     training2_trials = prepare_part(data['Training2_trials_con_con_con'],
                                     data['Training2_trials_inc1_inc1_inc1'],
-                                    data['Training2_trials_inc1_inc1_inc2'],
+                                    data['Training2_trials_inc1_inc2_inc1'],
                                     data['Training2_trials_inc1_inc2_inc3'],
                                     data['Training2_trials_neu_neu_neu'],
                                     win, text_height, words_dist)
 
     experiment_trials = prepare_part(data['Experiment_trials_con_con_con'],
                                      data['Experiment_trials_inc1_inc1_inc1'],
-                                     data['Experiment_trials_inc1_inc1_inc2'],
+                                     data['Experiment_trials_inc1_inc2_inc1'],
                                      data['Experiment_trials_inc1_inc2_inc3'],
                                      data['Experiment_trials_neu_neu_neu'],
                                      win, text_height, words_dist)
