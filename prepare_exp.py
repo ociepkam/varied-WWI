@@ -46,7 +46,7 @@ def prepare_trial(trial_type, win, text_height, words_dist):
         color = random.choice(possible_colors)
         possible_words = [key for key in stim_text if stim_text[key] != color]
         random.shuffle(possible_words)
-        words = [possible_words[0], possible_words[0], possible_words[1]]
+        words = [possible_words[0], possible_words[1], possible_words[0]]
 
     elif trial_type == 'trial_inc1_inc2_inc3':
         possible_colors = [stim_text[key] for key in stim_text]
@@ -54,6 +54,7 @@ def prepare_trial(trial_type, win, text_height, words_dist):
             possible_colors.remove(last_color)
         color = random.choice(possible_colors)
         words = [key for key in stim_text if stim_text[key] != color]
+        random.shuffle(words)
 
     elif trial_type == 'trial_neu_neu_neu':
         words = [stim_neutral, stim_neutral, stim_neutral]
@@ -65,7 +66,6 @@ def prepare_trial(trial_type, win, text_height, words_dist):
     else:
         raise Exception('Wrong trigger type')
 
-    random.shuffle(words)
     last_color = color
 
     stim1 = visual.TextStim(win, color=color, text=words[0], height=text_height, pos=(0, words_dist))

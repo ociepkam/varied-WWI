@@ -1,8 +1,9 @@
 ﻿Teraz zaczyna sie druga czesc treningu, ktora jest trudniejsza niz poprzedna.
 
-Tym razem beda sie wyswietlac trzy słowa oznaczajace kolory (ZIELONY, CZERWONY itp.)
+Tym razem beda sie wyswietlac trzy słowa oznaczajace kolory (ZIELONY, CZERWONY itp.).
+Slowa beda prezentowane jedno pod drugim.
 
-Tak jak poprzednio, rozpoznawaj wylacznie KOLOR SLOW a zupelnie ignoruj tresc slow.
+Tak jak poprzednio, rozpoznawaj wylacznie KOLOR SLOW, a zupelnie ignoruj znaczenie slow.
 
 Naciskaj:
 <--insert-->
